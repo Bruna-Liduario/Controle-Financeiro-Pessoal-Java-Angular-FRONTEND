@@ -1,0 +1,31 @@
+/* Adicionando estilo para exibir as tabelas lado a lado */
+.tabelas-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Espaçamento entre as tabelas */
+  flex-wrap: wrap; /* Garante que as tabelas se ajustem à largura da tela */
+}
+
+.mat-elevation-z8 {
+  width: 30%; /* Define que cada tabela vai ocupar 30% da largura do container */
+  box-sizing: border-box; /* Para garantir que a largura seja calculada incluindo padding e border */
+  margin-top: 10px;
+}
+
+
+
+/* Ajustando o layout das tabelas quando a tela for pequena */
+@media (max-width: 768px) {
+  .mat-elevation-z8 {
+    width: 100%; /* Tabelas ocuparão 100% da largura em telas menores */
+  }
+}
+
+
+.titulo{
+  margin-left: 10px;
+}
+
+.delete > i{
+  color: #e35e6b;
+}

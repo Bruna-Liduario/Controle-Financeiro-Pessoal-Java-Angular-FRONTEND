@@ -1,0 +1,16 @@
+.form-row {
+  display: flex;
+  gap: 10px; /* Espaçamento entre os campos */
+}
+
+button {
+  margin-left: 15px;
+  margin-top: 10px;
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-start;
+}

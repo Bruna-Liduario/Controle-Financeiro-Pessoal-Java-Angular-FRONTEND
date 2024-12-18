@@ -1,0 +1,96 @@
+<div class="tabelas-container">
+  <div class="mat-elevation-z8">
+    <h3 class="titulo">Entradas</h3>
+    <table mat-table [dataSource]="entradasDataSource" matSort>
+      <ng-container matColumnDef="descricaoEntrada">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Descrição</th>
+        <td mat-cell *matCellDef="let element">{{element.descricaoEntrada}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="valorentrada">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Valor</th>
+        <td mat-cell *matCellDef="let element">{{element.valorentrada | currency}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="acao">
+        <th mat-header-cell *matHeaderCellDef >Ação</th>
+        <td mat-cell *matCellDef="let row">
+          <a routerLink="/janeiro/delete/{{ row.id }}" class="delete">
+            <i class="material-icons">
+              delete
+            </i>
+          </a>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumnsEntradas"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumnsEntradas;"></tr>
+    </table>
+    <div class="titulo"><strong>Total Entradas: </strong>{{totalEntrada | currency}}</div>
+  </div>
+
+  <div class="mat-elevation-z8">
+    <h3 class="titulo">Gastos Fixos</h3>
+    <table mat-table [dataSource]="gastosFixosDataSource" matSort>
+      <ng-container matColumnDef="descricaogastofixo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Descrição</th>
+        <td mat-cell *matCellDef="let element">{{element.descricaogastofixo}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="valorgastofixo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Valor</th>
+        <td mat-cell *matCellDef="let element">{{element.valorgastofixo | currency}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="acao">
+        <th mat-header-cell *matHeaderCellDef >Ação</th>
+        <td mat-cell *matCellDef="let row">
+          <a routerLink="/janeiro/delete/{{ row.id }}" class="delete">
+            <i class="material-icons">
+              delete
+            </i>
+          </a>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumnsGastosFixos"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumnsGastosFixos;"></tr>
+    </table>
+    <div class="titulo"><strong>Total Gastos Fixos: </strong>{{totalGastoFixo | currency}}</div>
+  </div>
+
+  <div class="mat-elevation-z8">
+    <h3 class="titulo">Gastos Variáveis</h3>
+    <table mat-table [dataSource]="gastosVariaveisDataSource" matSort>
+      <ng-container matColumnDef="gastovariavel">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Descrição</th>
+        <td mat-cell *matCellDef="let element">{{element.gastovariavel}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="valorgastovariavel">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Valor</th>
+        <td mat-cell *matCellDef="let element">{{element.valorgastovariavel | currency}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="acao">
+        <th mat-header-cell *matHeaderCellDef >Ação</th>
+        <td mat-cell *matCellDef="let row">
+          <a routerLink="/janeiro/delete/{{ row.id }}" class="delete">
+            <i class="material-icons">
+              delete
+            </i>
+          </a>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumnsGastosVariaveis"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumnsGastosVariaveis;"></tr>
+    </table>
+    <div class="titulo"><strong>Total Gastos Variáveis: </strong>{{totalGastoVariavel | currency}}</div>
+  </div>
+</div>
+
+<div class="mat-elevation-z8">
+  <h3 class="titulo">Total Final</h3>
+  <div class="titulo"><strong>Total Final: </strong>{{totalFinal | currency}}</div>
+</div>

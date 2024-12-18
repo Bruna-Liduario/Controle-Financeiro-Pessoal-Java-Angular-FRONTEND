@@ -1,0 +1,34 @@
+<mat-sidenav-container class="container">
+  <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="64">
+    <mat-nav-list>
+      <a mat-list-item class="nav-list" routerLink="" >
+        <i class="material-icons" [ngStyle]="{'color': 'white'}">
+          home
+        </i>
+        Inicio
+      </a>
+
+      <div mat-subheader>Cadastros</div>
+
+      <a mat-list-item routerLink="/entrada">
+        <i class="material-icons" [ngStyle]="{'color': 'white'}"> add </i>
+        Cadastro Tipos de Entrada
+      </a>
+      <a mat-list-item routerLink="/gastofixo" >
+        <i class="material-icons" [ngStyle]="{'color': 'white'}"> add </i>
+        Cadastro Gastos Fixos
+      </a>
+
+      <div mat-subheader>Meses</div>
+      <a mat-list-item routerLink="/janeiro">
+        <i class="material-icons" [ngStyle]="{'color': 'white'}"> event </i>
+        Janeiro
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="content">
+   <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

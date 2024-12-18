@@ -1,0 +1,27 @@
+<mat-card>
+  <mat-card-title>Novo Gasto Fixo</mat-card-title>
+
+  <form>
+    <div class="form-row">
+      <mat-form-field>
+        <input matInput placeholder="Descrição" [(ngModel)]="gastosfixo.gastofixo" name="gastofixo">
+      </mat-form-field>
+    </div>
+    <div class="form-row">
+      <mat-form-field appearance="fill">
+        <mat-label>Valor</mat-label>
+        <input matInput [(ngModel)]="gastosfixo.valor" name="valor" >
+      </mat-form-field>
+    </div>
+  </form>
+
+</mat-card>
+
+
+<button class="buttons" mat-raised-button (click)="createGastoFixo()" color="primary">
+  Salvar
+ </button>
+
+ <button class="buttonc" mat-raised-button (click)="cancelGastoFixo()" color="primary">
+  Cancelar
+ </button>

@@ -1,0 +1,21 @@
+.form-row {
+  display: flex;
+  gap: 10px; /* Espaçamento entre os campos */
+}
+
+.buttons {
+  margin-top: 10px;
+}
+
+.buttonc {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+mat-card {
+  padding-left: 10px;
+}
+
+form {
+  padding-top: 20px;
+}

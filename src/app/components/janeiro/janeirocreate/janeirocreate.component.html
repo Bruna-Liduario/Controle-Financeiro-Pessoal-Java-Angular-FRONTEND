@@ -1,0 +1,81 @@
+<mat-card>
+  <mat-card-title class="titulo">Novo Lançamento Mês Janeiro</mat-card-title>
+  <form>
+    <div class="form-row">
+      <mat-form-field appearance="fill">
+        <mat-label>Entrada</mat-label>
+        <mat-select
+          [(ngModel)]="janeiros.idEntrada"
+          name="idEntrada"
+        >
+          <mat-option
+            *ngFor="let entrada of entradas"
+            [value]="entrada.id"
+          >
+            {{ entrada.descricaoentrada }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+      <mat-form-field>
+        <mat-label>Valor Entrada</mat-label>
+        <input
+          matInput
+          [(ngModel)]="janeiros.valorentrada"
+          name="valorentrada"
+        />
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="fill">
+        <mat-label>Gasto Fixo</mat-label>
+        <mat-select
+          [(value)]="janeiros.idGastoFixo"
+          (selectionChange)="onGastoFixoChange($event.value)"
+          name="idGastoFixo"
+        >
+          <mat-option *ngFor="let gastofixo of gastosfixo" [value]="gastofixo.id">
+            {{ gastofixo.gastofixo }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- Campo para exibir o valor do gasto fixo -->
+      <mat-form-field appearance="fill">
+        <mat-label>Valor do Gasto Fixo</mat-label>
+        <input matInput [value]="valorGastoFixo" name="valorGastoFixo" disabled />
+      </mat-form-field>
+
+    </div>
+
+    <div class="form-row">
+      <mat-form-field>
+        <mat-label>Gasto Variável</mat-label>
+        <input
+          matInput
+          [(ngModel)]="janeiros.gastovariavel"
+          name="gastovariavel"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Valor Gasto Variável</mat-label>
+        <input
+          matInput
+          [(ngModel)]="janeiros.valorgastovariavel"
+          name="valorgastovariavel"
+        />
+      </mat-form-field>
+    </div>
+
+
+
+    <div class="button-container">
+      <button type="button" mat-raised-button (click)="createJaneiro()">Salvar</button>
+
+      <button type="button" mat-raised-button (click)="cancelJaneiro()">Cancelar</button>
+    </div>
+  </form>
+</mat-card>
